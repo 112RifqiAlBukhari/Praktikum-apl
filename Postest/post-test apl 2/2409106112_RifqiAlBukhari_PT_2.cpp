@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
 
-string Syarat_Login[2][2] = { {"rifqi al bukhari", "rifqi"},
+string Syarat_Login[2][2] = { {"rifqi al bukhari", "2409106112"},
                             {"rifqi", "112"}
                             };
 string menu_ps[10]; 
@@ -42,7 +42,7 @@ while (true){
     
     if(pilih_1 == 1){
 
-        while(mencoba > 0){
+        while(mencoba > 0 && !login_sukses){
             cout << "================= SILAHKAN LOGIN ==================" << endl;
             cout << "masukkan username : ";
             cin.ignore();
@@ -56,6 +56,7 @@ while (true){
                     login_sukses = true;
                     break;
                 }
+           
 
             }if(login_sukses){
                 cout << endl;
@@ -503,17 +504,17 @@ while (true){
             
         }
     }
-        } else {
+        } 
+        else {
             mencoba--;
             cout << "login gagal, batas percobaan " << mencoba << endl;
+    }  
+    }if(!login_sukses){
+        cout << "anda sudah melewati batas gagal anda, program berhenti" << endl;
+        break;
+        return 0;
     }
-    if(!login_sukses){
-            cout << "anda sudah melewati batas gagal anda, program berhenti" << endl;
-            return 0;
-        }
-        
-        
-    }
+    
     }else if(pilih_1 == 2){
         while (true){
             cout << "============ HALO PEMBELI PSCUUU =========== \n";
@@ -664,6 +665,7 @@ while (true){
     break;
 }else{
     cout << "inputan ngawur" << endl;
+    cout << endl;
 }
 
 
@@ -671,3 +673,4 @@ while (true){
 
 return 0;
 }
+
